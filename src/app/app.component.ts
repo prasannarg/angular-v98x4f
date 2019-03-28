@@ -6,11 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements OnInit {
-  private name_private: any;
+  private time_now: string;
   constructor()
-  {}
+  {
+    setInterval( ()=>{
+      let time_var = new Date();
+      this.time_now = time_var.toTimeString();
+    },1000
+    )
+
+  }
   ngOnInit(){
-    this.name_private = 'PRG';
+    
   };
   name = 'Prasanna';
 }
